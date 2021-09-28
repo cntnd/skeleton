@@ -4,7 +4,7 @@
     * php\inlcudes *.php (also input or output)
     * scss *.scss
 
-* $cfg:
+* $cfg["tab"]:
     * "actionlog":"con_actionlog",
     * "actions":"con_actions",
     * "area":"con_area",
