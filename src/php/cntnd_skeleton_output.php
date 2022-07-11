@@ -1,5 +1,8 @@
 <?php
-// cntnd_html_output
+// cntnd_skeleton_output
+
+// includes
+cInclude('module', 'includes/class.cntnd_skeleton.php');
 
 // assert framework initialization
 defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
@@ -14,13 +17,11 @@ if (empty($lines)){
   $lines = 5;
 }
 $own_js = (bool) "CMS_VALUE[3]";
+$selectedDir = "CMS_VALUE[4]";
 
+// other vars
 $text = "CMS_HTML[1]";
-
-// includes
-if (!$editmode && $truncate){
-	cInclude('module', 'includes/script.cntnd_skeleton_output-or-input.php');
-}
+$skeleton = new Cntnd\Skeleton\CntndSkeleton($lang, $client);
 
 // module
 if ($editmode){
@@ -36,29 +37,4 @@ $tpl->display('default.html');
 if ($editmode){
   echo '</div>';
 }
-if (!$editmode && $truncate){
 ?>
-<script>
-$(document).ready(function() {
-  $('.truncate').trunk8({
-     lines: <?= $lines ?>,
-     parseHTML: true,
-     tooltip: false,
-     fill: '&hellip;'
-  });
-  <?php if(!$own_js){ ?>
-  $('.read-more').click(function(){
-    $('#truncate-'+$(this).attr('target')).trunk8('revert');
-    $(this).hide();
-    $('.read-less[target='+$(this).attr('target')+']').show();
-  });
-
-  $('.read-less').click(function(){
-      $('#truncate-'+$(this).attr('target')).trunk8();
-      $(this).hide();
-      $('.read-more[target='+$(this).attr('target')+']').show();
-  });
-  <?php } ?>
-});
-</script>
-<?php } ?>
