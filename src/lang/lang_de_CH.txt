@@ -1,1 +1,1 @@
-MODULE=SKELETON
+MODULE=Skeleton

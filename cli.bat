@@ -1,1 +1,1 @@
-call ./vendor/cntnd/cntnd-skeleton-cli/bin/cntnd-cli
+call ./vendor/cntnd/cntnd-skeleton-cli/bin/cntnd-cli %*

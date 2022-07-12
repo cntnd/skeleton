@@ -1,8 +1,11 @@
 # skeleton for cntnd module
 
-* refactor the following files with your module name:
-  * use CLI !!
-  * run gulp init
+* run npm install
+* run composer install
+* refactor/initialize the module:
+  * .\cli.bat init [MODULE NAME in SNAKE CASE] --gulp
+  * or if you run the .\cli.bat init without --gulp run gulp init
+
 
 * $cfg["tab"]:
     * "actionlog":"con_actionlog",
