@@ -1,1 +1,1 @@
-MODULE=Modul name
+MODULE=SKELETON
