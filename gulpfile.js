@@ -67,3 +67,5 @@ gulp.task('default', gulp.series('sass','watch'));
 gulp.task('dist', gulp.series('clean','sass','info-xml','zip'));
 
 gulp.task('module', gulp.series('clean','sass','info-xml','xampp'));
+
+gulp.task('init', gulp.series('clean','sass','info-xml'));

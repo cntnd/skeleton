@@ -5,7 +5,7 @@ namespace Cntnd\Skeleton;
 require_once("class.cntnd_util.php");
 
 /**
- * cntnd_skeleton Class
+ * cntnd_SKELETON Class
  */
 class CntndSkeleton extends CntndUtil
 {

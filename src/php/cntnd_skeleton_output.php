@@ -1,8 +1,8 @@
 <?php
-// cntnd_skeleton_output
+// cntnd_SKELETON_output
 
 // includes
-cInclude('module', 'includes/class.cntnd_skeleton.php');
+cInclude('module', 'includes/class.cntnd_SKELETON.php');
 
 // assert framework initialization
 defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
@@ -21,7 +21,7 @@ $selectedDir = "CMS_VALUE[4]";
 
 // other vars
 $text = "CMS_HTML[1]";
-$skeleton = new Cntnd\Skeleton\CntndSkeleton($lang, $client);
+$SKELETON = new Cntnd\Skeleton\CntndSkeleton($lang, $client);
 
 // module
 if ($editmode){

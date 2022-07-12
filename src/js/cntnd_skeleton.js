@@ -1,4 +1,4 @@
-/* cntnd_skeleton */
+/* cntnd_SKELETON */
 $(document).ready(function(){
-  console.log("cntnd_skeleton", "javscript file");
+  console.log("cntnd_SKELETON", "javscript file");
 });
