@@ -26,12 +26,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('xampp', function () {
-    return gulp.src(['src/**/*','!src/scss*'])
+    return gulp.src(['src/**','!src/{scss,scss/**}','!src/{sql,sql/**}'])
         .pipe(gulp.dest('modules/'+pkg.name));
 });
 
 gulp.task('zip', function() {
-  return gulp.src(['src/**/*','!src/scss*'])
+    return gulp.src(['src/**','!src/{scss,scss/**}','!src/{sql,sql/**}'])
   		.pipe(zip(pkg.name+'.zip'))
   		.pipe(gulp.dest('dist'));
 });
