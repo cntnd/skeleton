@@ -1,5 +1,6 @@
 <?php
 // cntnd_SKELETON_output
+$cntnd_module = "cntnd_SKELETON";
 
 // includes
 cInclude('module', 'includes/class.cntnd_SKELETON.php');
@@ -20,12 +21,13 @@ $own_js = (bool) "CMS_VALUE[3]";
 $selectedDir = "CMS_VALUE[4]";
 
 // other vars
+$uuid = rand();
 $text = "CMS_HTML[1]";
 $SKELETON = new Cntnd\Skeleton\CntndSkeleton($lang, $client);
 
 // module
 if ($editmode){
-	echo '<div class="content_box"><label class="content_type_label">'.mi18n("MODULE").'</label>';
+    echo '<span class="module_box_outer" data-module="'.$cntnd_module.'" data-uuid="'.$uuid.'"><span class="module_box_inner"><label class="module_label">'.mi18n("MODULE").'</label></span></span>';
 }
 
 $tpl = cSmartyFrontend::getInstance();
@@ -35,6 +37,6 @@ $tpl->assign('text', $text);
 $tpl->display('default.html');
 
 if ($editmode){
-  echo '</div>';
+    echo '<span class="module_box_end" style="clear: both;" data-module="'.$cntnd_module.'" data-uuid="'.$uuid.'"></span>';
 }
 ?>

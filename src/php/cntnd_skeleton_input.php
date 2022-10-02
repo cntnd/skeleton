@@ -1,5 +1,6 @@
 ?><?php
 // cntnd_SKELETON_input
+$cntnd_module = "cntnd_SKELETON";
 
 // includes
 cInclude('module', 'includes/class.cntnd_SKELETON.php');
