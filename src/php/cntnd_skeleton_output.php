@@ -2,14 +2,18 @@
 // cntnd_SKELETON_output
 $cntnd_module = "cntnd_SKELETON";
 
-// includes
-cInclude('module', 'includes/class.cntnd_SKELETON.php');
-
 // assert framework initialization
 defined('CON_FRAMEWORK') || die('Illegal call: Missing framework initialization - request aborted.');
 
 // editmode
 $editmode = cRegistry::isBackendEditMode();
+
+// includes
+cInclude('module', 'includes/class.cntnd_SKELETON.php');
+if ($editmode) {
+    cInclude('module', 'includes/script.cntnd_SKELETON.php');
+    cInclude('module', 'includes/style.cntnd_SKELETON.php');
+}
 
 // input/vars
 $truncate = (bool) "CMS_VALUE[1]";
@@ -27,7 +31,7 @@ $SKELETON = new Cntnd\Skeleton\CntndSkeleton($lang, $client);
 
 // module
 if ($editmode){
-    echo '<span class="module_box_outer" data-module="'.$cntnd_module.'" data-uuid="'.$uuid.'"><span class="module_box_inner"><label class="module_label">'.mi18n("MODULE").'</label></span></span>';
+    echo '<span class="module_box"><label class="module_label">'.mi18n("MODULE").'</label></span>';
 }
 
 $tpl = cSmartyFrontend::getInstance();
@@ -35,8 +39,4 @@ $tpl->assign('truncate', $truncate);
 $tpl->assign('uuid', 'idart'.$idart);
 $tpl->assign('text', $text);
 $tpl->display('default.html');
-
-if ($editmode){
-    echo '<span class="module_box_end" style="clear: both;" data-module="'.$cntnd_module.'" data-uuid="'.$uuid.'"></span>';
-}
 ?>
